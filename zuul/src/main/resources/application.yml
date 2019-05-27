@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: zuul-service
+
+server:
+  port: 80
+
+
+zuul:
+  routes:
+    blog:
+        path: /xiaol/**
+        url: http://www.baidu.com
+    user:
+        path: /user/**
+        serviceId: user-service
+    feedback:
+        path: /feedback/**
+        serviceId: feedback-service
