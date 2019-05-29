@@ -15,9 +15,11 @@ zuul:
     blog:
         path: /xiaol/**
         url: http://www.baidu.com
+    #用户服务
     user:
-        path: /user/**
+        path: /u/**
         serviceId: user-service
+    #反馈服务
     feedback:
-        path: /feedback/**
+        path: /fb/**
         serviceId: feedback-service

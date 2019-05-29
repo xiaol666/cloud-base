@@ -24,11 +24,20 @@
     <packaging>pom</packaging>
 
     <modules>
+        <!--注册中心-->
         <module>eureka</module>
+        <!--用户服务-->
         <module>userservice</module>
+        <!--服务提供者-->
         <module>feignprovider</module>
+        <!--反馈服务（服务消费者，测试服务消费用）-->
         <module>feedbackservice</module>
+        <!--网关-->
         <module>zuul</module>
+        <!--实体层，装各类实体-->
+        <module>model</module>
+        <!--工具-->
+        <module>common</module>
     </modules>
 
 

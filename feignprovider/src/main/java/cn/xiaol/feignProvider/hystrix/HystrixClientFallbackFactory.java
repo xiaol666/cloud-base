@@ -10,7 +10,6 @@ public class HystrixClientFallbackFactory implements FallbackFactory<UserProvide
 
     @Override
     public UserProvider create(Throwable throwable) {
-        return () -> "服务挂掉了";
+        return null;
     }
-
 }

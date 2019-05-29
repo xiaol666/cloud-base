@@ -1,9 +1,38 @@
+spring:
+  profiles:
+    active: @profiles.active@
+  application:
+    name: user-service
+  http:
+    converters:
+      preferred-json-mapper: fastjson
+  #devtools:
+  #  restart:
+  #    enabled: true
+
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-spring:
-  application:
-    name: user-service
-server:
-  port: 8082
+
+##### mybatis-plus #####
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*Mapper.xml
+  type-aliases-package: cn.xiaol.userService.model
+  global-config:
+    id-type: 1  #1:数据库ID自增   2:用户输入id   3:全局唯一id(IdWorker)   4:全局唯一ID(uuid)
+    db-column-underline: false
+    refresh-mapper: true  #刷新mapper 调试神器
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true #配置的缓存的全局开关
+    lazy-loading-enabled: true #延时加载的开关
+    multiple-result-sets-enabled: true #开启的话，延时加载一个属性时会加载该对象全部属性，否则按需加载属性
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+
+##### log #####
+logging:
+  level:
+    root: info
+    org.springframework.web: warn
+    cn.xiaol: debug
